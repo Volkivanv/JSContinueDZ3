@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="menu">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        
+    </ul>
+    <button class="addLi">Добавить ссылку</button>
+    <button class="delLi">Удалить ссылку</button>
+    <button class="addClass">Добавить класс</button>
+    <script>
+        const menuEl = document.querySelector('.menu');
+        // const nameFunction = (e) => {
+        //     console.log(e.target, e.currentTarget);
+        // }
+        // menuEl.addEventListener('click', nameFunction);
+        const addLi = document.querySelector('.addLi');
+        const delLi = document.querySelector('.delLi');
+        const addClass = document.querySelector('.addClass');
+        addLi.addEventListener('click', function (e) {
+            newLi = document.createElement('li');
+            newLi.textContent = 'новый элемент списка';
+            menuEl.appendChild(newLi);
+        });
+        
+        delLi.addEventListener('click', function (e) {
+            menuEl.firstChild.remove();
+        });
+
+        console.log(addClass);
+
+        addClass.addEventListener('click', function (e) {
+            const target = e.target;
+            target.classList.add('click');
+        });
+        console.log(addClass);
+
+    </script>
+</body>
+</html>

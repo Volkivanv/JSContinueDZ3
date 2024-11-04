@@ -1,0 +1,97 @@
+Дан HTML:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Homework 5</title>
+  </head>
+  <body>
+    <p class="super_element">Привет</p>
+    <img src="https://placeimg.com/50/50/animals" alt="" />
+    <img src="https://placeimg.com/50/50/arch" alt="" />
+    <img src="https://placeimg.com/50/50/nature" alt="" />
+    <img src="https://placeimg.com/50/50/people" alt="" />
+    <img src="https://placeimg.com/50/50/tech" alt="" />
+    <img src="https://placeimg.com/50/50/tech/grayscale" alt="" />
+    <img src="https://placeimg.com/50/50/tech/sepia" alt="" />
+    <br />
+    <button>Кнопка</button>
+    <button class="super_element">Кнопка с классом btn</button>
+    <button>Кнопка</button>
+    <br />
+    <textarea></textarea>
+    <br />
+    <ul>
+      <li>
+        <button>Кнопка 1</button>
+      </li>
+      <li>
+        <button>Кнопка 2</button>
+      </li>
+      <li>
+        <button>Кнопка 3</button>
+      </li>
+      <li>
+        <button>Кнопка 4</button>
+      </li>
+    </ul>
+    <script>
+        // 1. Необходимо вывести сообщение в консоль "все теги прогрузились", когда все теги будут созданы браузером.
+
+        document.addEventListener('DOMContentLoaded', function (e) {
+            console.log('Тэги загрузились');
+        });
+       
+        // 2. Необходимо вывести сообщение в консоль "страница загрузилась", когда все ресурсы страницы будут загружены.
+        
+        window.addEventListener('load', function (e) {
+            console.log('страница загрузилась');
+        });
+        //         3. При клике на какой-либо тег на странице в консоль должно выводиться сообщение следующего вида:
+        // ○ Класс "super_element" присутствует в элементе "div".
+        // ○ Сообщение должно определять присутствует ли класс "super_element" у
+        // элемента и выводить в нижнем регистре верный тег в данной строке, по
+        // которому был совершен клик.
+        // ○ Необходимо использовать делегирование.
+
+        document.addEventListener('click', function (e) {
+            const target = e.target;
+            if(target.classList.contains("super_element")){
+                console.log(`Класс "super_element" присутствует в элементе ${target.tagName.toLowerCase()}.`);
+            }else {
+                console.log(`Класс "super_element" отсутсвует в элементе ${target.tagName.toLowerCase()}.`);
+            }
+        });
+
+        // 4. Сделайте так, чтобы при наведении на <textarea> в консоли появлялось сообщение: "Вы навели на textarea."
+
+        const textArea = document.querySelector('textarea');
+        textArea.addEventListener('mouseover', function (e) {
+            console.log('Вы навели на textarea');
+        });
+
+        // 5.Необходимо повесить событие клика на тег <ul>. В обработчике события в консоль выводите текст, который записан внутри элемента кнопки, по которой был произведен клик. Если клик был не по кнопке, то ничего выводить не нужно. Необходимо использовать делегирование.
+        
+        const ulEl = document.querySelector('ul');
+        ulEl.addEventListener('click', function (e) {
+            const target = e.target;
+            if (target.tagName ==='BUTTON'){
+                console.log(`клик был произведен по кнопке ${target.textContent}`);
+            }
+        });
+        // 7. При клике на кнопке в <ul>, сначала выводится текст из 5
+        // задания, потому что события обрабатываются в порядке их добавления,
+        // а событие клика на <ul> происходит до того, как событие нажатия на
+        // кнопку внутри <ul> будет полностью обработано. Поэтому текст из 5
+        // задания выводится раньше.
+        const liArray = document.querySelectorAll('ul li');
+        let i = 0;
+        liArray.forEach(element => {
+            i++;
+            if(i%2 == 0){
+                element.style.backgroundColor = 'yellow';
+            }
+        });
+    </script>
+  </body>
+</html>

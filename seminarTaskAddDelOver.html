@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="newHeading">Добавить заголовок</button>
+    <button class="delHeading">Удалить заголовок</button>
+    <button class="button">Купить</button>
+
+
+    <script>
+        const newHeading = document.querySelector('.newHeading');
+        const delHeading = document.querySelector('.delHeading');
+        const heading = document.createElement('h1');
+        heading.textContent = 'Новый заголок';
+
+        newHeading.addEventListener('click', function (e) {
+            newHeading.parentElement.appendChild(heading);
+        });
+        if(heading){
+            delHeading.addEventListener('click', function (e) {
+                heading.remove();
+            });
+        }
+
+
+
+        const buttonEl = document.querySelector('.button');
+        buttonEl.addEventListener('mouseover', function (e) {
+            console.log('Не нужно наводить, ты лучше нажми');
+        });
+
+        buttonEl.addEventListener('mouseleave', function (e) {
+            console.log('Не нужно убегать');
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="console.log(counter++)" class="button">Купить</button>
+    <div onclick="console.log('hello click html')" class="div-button">Купить 2</div>
+    <script>
+        const buttonEl = document.querySelector('.button');
+
+        let count = 0;
+        let counter = 0;
+        buttonEl.onclick = function(){
+            console.log('Click js button');
+            count++;
+            console.log(`Кликов по кнопке ${count}`);
+        }
+        buttonEl.addEventListener('click', function (e) {
+            console.log('click add');
+        });
+        buttonEl.addEventListener('click', function (e) {
+            console.log('click two');
+        });
+
+        buttonEl.addEventListener('click', click);
+
+    </script>
+</body>
+</html>

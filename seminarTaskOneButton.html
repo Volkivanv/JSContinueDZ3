@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="button">Нажми меня</button>
+    <script>
+        window.addEventListener('load', function (e) {
+            console.log('страница загрузилось');
+        });
+        document.addEventListener('DOMContentLoaded', function (e) {
+            console.log('DOM Content loaded');
+        });
+
+        const buttonEl = document.querySelector('.button');
+
+        buttonEl.onclick = function () {
+            console.log('событие onclick');
+        }
+        
+        buttonEl.addEventListener('click',function(){
+            console.log('событие addEventListener');
+        });
+
+    </script>
+</body>
+</html>

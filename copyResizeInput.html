@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius illo reprehenderit temporibus maxime, eum consequatur sequi omnis repellat quisquam cupiditate voluptate repudiandae iste autem quo dolores corrupti accusantium voluptatum libero.
+    </p> -->
+    <input type="text">
+    <script>
+        const inputEl = document.querySelector('input');
+
+        inputEl.addEventListener('input',  (e) => {
+            if (event.target.value ==='123'){
+                console.log('Верно');
+            } else {
+                console.log('Не угадал');
+            }
+        });
+        // document.addEventListener('copy', function (e) {
+        //     const copyText = document.getSelection().toString();
+        //     console.log(copyText);
+        // });
+        // window.addEventListener('resize', function (e) {
+        //     console.log('resize');
+        // });
+
+    </script>
+</body>
+</html>
